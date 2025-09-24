@@ -5,22 +5,19 @@ get_header();
 $products_slide = wc_get_products([
   'limit' => 6,
   'tag' => ['slide'],
-  'stock_status' => 'instock'
 ]);
 
 $products_new = wc_get_products([
   'limit' => 9,
   'orderby' => 'date',
-  'order' => 'DESC',
-  'stock_status' => 'instock'
+  'order' => 'DESC'
 ]);
 
 $products_sales = wc_get_products([
   'limit' => 9,
   'meta_key' => 'total_sales',
   'orderby' => 'meta_value_num',
-  'order' => 'DESC',
-  'stock_status' => 'instock'
+  'order' => 'DESC'
 ]);
 
 $data = [];
@@ -75,7 +72,7 @@ $data['categorias'][$categoria_direita] = get_product_category_data($categoria_d
 
 <section class="container">
   <h1 class="subtitulo">Lançamentos</h1>
-  <?php handel_product_list($data['lancamentos']); ?>
+  <?php loja_product_list($data['lancamentos']); ?>
 </section>
 
 <section class="categorias-home">
@@ -89,7 +86,7 @@ $data['categorias'][$categoria_direita] = get_product_category_data($categoria_d
 
 <section class="container">
   <h1 class="subtitulo">Mais Vendidos</h1>
-  <?php handel_product_list($data['vendidos']); ?>
+  <?php loja_product_list($data['vendidos']); ?>
 </section>
 
 <?php } } ?>

@@ -1,25 +1,25 @@
 <?php
-function handel_add_woocommerce_support() {
+function loja_add_woocommerce_support() {
   add_theme_support('woocommerce');
 }
-add_action('after_setup_theme', 'handel_add_woocommerce_support');
+add_action('after_setup_theme', 'loja_add_woocommerce_support');
 
-function handel_css() {
-  wp_register_style('handel-style', get_template_directory_uri() . '/style.css', [], '1.0.0', false);
-  wp_enqueue_style('handel-style');
+function loja_css() {
+  wp_register_style('loja-style', get_template_directory_uri() . '/style.css', [], '1.0.0', false);
+  wp_enqueue_style('loja-style');
 }
-add_action('wp_enqueue_scripts', 'handel_css');
+add_action('wp_enqueue_scripts', 'loja_css');
 
-function handel_custom_images() {
+function loja_custom_images() {
   add_image_size('slide', 1000, 800, ['center', 'top']);
   update_option('medium_crop', 1);
 }
-add_action('after_setup_theme', 'handel_custom_images');
+add_action('after_setup_theme', 'loja_custom_images');
 
-function handel_loop_shop_per_page() {
+function loja_loop_shop_per_page() {
   return 6;
 }
-add_filter('loop_shop_per_page', 'handel_loop_shop_per_page');
+add_filter('loop_shop_per_page', 'loja_loop_shop_per_page');
 
 function remove_some_body_class($classes) {
   $woo_class = array_search('woocommerce', $classes);
@@ -47,23 +47,23 @@ include(get_template_directory() . '/inc/user-custom-menu.php');
 include(get_template_directory() . '/inc/checkout-customizado.php');
 
 
-// function handel_change_email_header() {
+// function loja_change_email_header() {
 //   echo '<h2 style="text-align: center;">Mensagem Header</h2>';
 // }
 
-// add_action('woocommerce_email_header', 'handel_change_email_header');
+// add_action('woocommerce_email_header', 'loja_change_email_header');
 
-function handel_change_email_footer_text($text) {
-  echo 'Handel
+function loja_change_email_footer_text($text) {
+  echo 'Loja
   <ul style="padding: 0px; margin: 0px; list-style: none;">
     <li><a href="/">Facebook</a></li>
     <li><a href="/">Instagram</a></li>
     <li><a href="/">YouTube</a></li>
   </ul>';
 }
-add_filter('woocommerce_email_footer_text', 'handel_change_email_footer_text');
+add_filter('woocommerce_email_footer_text', 'loja_change_email_footer_text');
 
-function handel_add_email_meta($order) {
+function loja_add_email_meta($order) {
   $mensagem = get_post_meta($order->get_id(), 'mensagem_personalizada', true);
   $presente = get_post_meta($order->get_id(), '_billing_presente', true);
   
@@ -72,5 +72,5 @@ function handel_add_email_meta($order) {
     <p style="font-size: 16px; border: 1px solid #e5e5e5; padding: 10px;"><strong>Presente: </strong>' . $presente .  '</p>
   ';
 }
-add_action('woocommerce_email_order_meta', 'handel_add_email_meta');
+add_action('woocommerce_email_order_meta', 'loja_add_email_meta');
 ?>

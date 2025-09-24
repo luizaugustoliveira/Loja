@@ -72,7 +72,7 @@
 <section class="container-separador">
   <div class="container">
     <h2 class="subtitulo">Relacionados</h2>
-    <?php handel_product_list($related); ?>
+    <?php loja_product_list($related); ?>
   </div>
 </section>
 

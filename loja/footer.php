@@ -1,5 +1,5 @@
 <footer class="footer">
-  <img src="<?= get_stylesheet_directory_uri(); ?>/img/handel-white.svg" alt="Handel">
+  <img src="<?= get_stylesheet_directory_uri(); ?>/img/loja-white.svg" alt="Loja">
   <div class="container footer-info">
     <section>
       <h3>Páginas</h3>
@@ -37,7 +37,7 @@
     $base_state = $countries->get_base_state();
     $complete_address = "$base_address, $base_city, $base_state";
   ?>
-  <small class="footer-copy">Handel &copy; <?= date('Y'); ?> - <?= $complete_address; ?></small>
+  <small class="footer-copy">Loja &copy; <?= date('Y'); ?> - <?= $complete_address; ?></small>
 </footer>
 <?php wp_footer(); ?>
 <script src="<?= get_stylesheet_directory_uri(); ?>/js/slide.js"></script>

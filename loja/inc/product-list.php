@@ -12,7 +12,7 @@ function format_products($products, $img_size = 'medium') {
   return $products_final;
 }
 
-function handel_product_list($products) { ?>
+function loja_product_list($products) { ?>
   <ul class="products-list">
     <?php foreach($products as $product) { ?>
       <li class="product-item">
@@ -29,5 +29,5 @@ function handel_product_list($products) { ?>
     <?php } ?>
   </ul>
 <?php 
-} // Fecha a função handel
+} // Fecha a função loja
 ?>
